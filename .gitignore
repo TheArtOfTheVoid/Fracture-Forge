@@ -10,3 +10,5 @@ Thumbs.db
 # Editor temp files
 *.tmp
 *.temp
+
+build/
