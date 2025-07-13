@@ -1,0 +1,31 @@
+name: Godot CI
+
+on:
+  push: { branches: [main] }
+  pull_request: {}
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: firebelley/godot-export@v4
+        with:
+          godot-version: '4.2.1'
+          export-preset: 'Windows Desktop'
+          output-dir: build/windows
+      - uses: firebelley/godot-export@v4
+        with:
+          godot-version: '4.2.1'
+          export-preset: 'Web'
+          output-dir: build/web
+      - uses: actions/upload-artifact@v4
+        with:
+          name: game-builds
+          path: build/**
+      - name: Deploy Web build to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
