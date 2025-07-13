@@ -20,3 +20,5 @@ move_backward={"deadzone":0.5,"events":[{"type":"key","keycode":83}]}
 move_left={"deadzone":0.5,"events":[{"type":"key","keycode":65}]}
 move_right={"deadzone":0.5,"events":[{"type":"key","keycode":68}]}
 jump={"deadzone":0.5,"events":[{"type":"key","keycode":32}]}
+mine={"deadzone":0.5,"events":[{"type":"mouse_button","button_index":1}]}
+build={"deadzone":0.5,"events":[{"type":"mouse_button","button_index":2}]}

@@ -9,6 +9,8 @@ A tiny Godot 4 project demonstrating a simple voxel-style movement test.
 - **WASD**: Move the player cube
 - **Space**: Jump
 - **Esc**: Quit
+- **Left-click**: Mine block
+- **Right-click**: Build block
 
 ## Local export
 Run the helper script if the Godot CLI is installed:
