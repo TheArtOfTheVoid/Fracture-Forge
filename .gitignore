@@ -1,2 +1,12 @@
-# Godot 4+ specific ignores
+# Godot 4 cache & temp
+.import/
 .godot/
+godot.export/
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Editor temp files
+*.tmp
+*.temp

@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-60, 45, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = CubeMesh.new()
+scale = Vector3(10, 1, 10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = BoxShape3D.new()
+scale = Vector3(10, 1, 10)
+
+[node name="Obstacle1" type="StaticBody3D" parent="."]
+position = Vector3(2, 0.5, 2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Obstacle1"]
+mesh = CubeMesh.new()
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle1"]
+shape = BoxShape3D.new()
+
+[node name="Obstacle2" type="StaticBody3D" parent="."]
+position = Vector3(-3, 0.5, -1)
+
+[node name="Mesh" type="MeshInstance3D" parent="Obstacle2"]
+mesh = CubeMesh.new()
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle2"]
+shape = BoxShape3D.new()
+
+[node name="Player" parent="." instance=ExtResource(1)]
+position = Vector3(0, 1, 0)
+
+[node name="Goal" parent="." instance=ExtResource(2)]
+position = Vector3(0, 0.5, 5)

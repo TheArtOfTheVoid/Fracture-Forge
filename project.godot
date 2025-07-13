@@ -9,7 +9,14 @@
 config_version=5
 
 [application]
-
 config/name="Fracture-forge"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+run/main_scene="res://Main.tscn"
+
+[input]
+move_forward={"deadzone":0.5,"events":[{"type":"key","keycode":87}]}
+move_backward={"deadzone":0.5,"events":[{"type":"key","keycode":83}]}
+move_left={"deadzone":0.5,"events":[{"type":"key","keycode":65}]}
+move_right={"deadzone":0.5,"events":[{"type":"key","keycode":68}]}
+jump={"deadzone":0.5,"events":[{"type":"key","keycode":32}]}
