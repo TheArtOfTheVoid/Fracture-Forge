@@ -4,6 +4,10 @@
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World.tscn" type="PackedScene" id=3]
 [ext_resource path="res://VoxelTool.gd" type="Script" id=4]
+<<<<<<< ptbk3o-codex/set-up-godot-project-structure
+[ext_resource path="res://UI.tscn" type="PackedScene" id=5]
+=======
+>>>>>>> main
 
 [node name="Main" type="Node3D"]
 
@@ -42,3 +46,8 @@ enabled = true
 
 [node name="Goal" parent="." instance=ExtResource(2)]
 position = Vector3(0, 0.5, 5)
+<<<<<<< ptbk3o-codex/set-up-godot-project-structure
+
+[node name="UI" parent="." instance=ExtResource(5)]
+=======
+>>>>>>> main

@@ -11,6 +11,11 @@ A tiny Godot 4 project demonstrating a simple voxel-style movement test.
 - **Esc**: Quit
 - **Left-click**: Mine block
 - **Right-click**: Build block
+<<<<<<< ptbk3o-codex/set-up-godot-project-structure
+- Cross-hair indicates current target block
+- Engine now batches ground cubes via MultiMesh
+=======
+>>>>>>> main
 
 ## Local export
 Run the helper script if the Godot CLI is installed:
