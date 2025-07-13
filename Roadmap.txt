@@ -1,0 +1,116 @@
+# Cradle‑to‑Crucible  
+*A voxel‑scale extraction sandbox set in the Crimson Imperium universe*  
+
+## High‑Level Pitch
+You remote‑pilot an autonomous drone swarm that crashes onto a pristine, 1 km × 1 km planetoid.  
+Your mandate: **strip the planet to its core, industrialise every cubic metre, and launch ≥ 95 % of the original mass into orbit via electromagnetic rail‑cannon arrays**. When the planet is hollow and lifeless, the swarm departs, leaving behind a metal husk ready for full Crimson integration.
+
+## Core Objective
+1. **Bootstrap Industry** – Burn organic matter for early power, mine surface stone & low‑grade ore.  
+2. **Scale & Replace** – Erect ever‑larger refineries, power plants, and logistics networks that sprawl across (and through) the terrain.  
+3. **Go Deeper** – Penetrate successive geological layers, each hotter and richer than the last, while managing heat, pressure, and scarce trace elements.  
+4. **Export Mass** – Convert raw or refined materials into “slug” payloads and fire them skyward. Higher processing quality multiplies score.  
+5. **Endgame** – Reach the nickel–iron outer core, siphon what’s left, and complete the launch quota before catastrophic grid failure or element depletion.
+
+Victory = planet mass ≤ 5 % *and* critical elements ≥ 2 %.  
+Defeat = sustained blackout, mantle blow‑through, or trace elements < 2 %.
+
+---
+
+## World Structure (0.5 m voxels)
+
+| Layer | Depth Band | Dominant Blocks | New Challenges | Key Unlocks |
+|-------|------------|-----------------|----------------|-------------|
+| **Surface Biome** | 0 – 50 m | Organics, topsoil | Storms, thin ores | Biomass burners, Tier I rail cannon |
+| **Sub‑Surface Veins** | 50 m – 2 km | Fe, Cu, Al, coal | Cave‑ins, dust | Tier II drills, basic smelters |
+| **Deep Crust** | 2 – 15 km | Dense metals, rares | ↑Heat/pressure | Coolant loops, tier III rigs |
+| **Mantle Fringe** | 15 – 40 km | Semi‑molten rock | 400 – 800 °C | Mag‑pumps, geothermal taps |
+| **Mantle Core** | 40 – 100 km* | Fluid magma | 1000 °C+, crust collapse | Remote siphons, capacitor rail arrays |
+| **Outer Core** | 100 km + | Ni‑Fe slurry | EM storms | Core siphon, megacannon |
+
+\*depth cap adjustable for performance.
+
+---
+
+## Major Systems
+
+### Voxel Terrain  
+Sparse‑octree chunks stream only where drones act. Terrain edits physically remove mass, feeding global **Planet Mass %**.
+
+### Drone Swarm  
+Up to 100 active drones with RTS‑style box‑select. Path on a 2‑D nav‑mesh plus vertical “elevator” nodes. Upgrades unlock self‑replication and hazard avoidance.
+
+### Extraction & Logistics  
+* **Drills / Bore Rigs / Strip‑Mine Arrays** – speed vs. power draw.  
+* **Maglev Belts & Vacuum Tubes** – unified item/liquid/gas transport.  
+* **Heat & Pressure** – every machine outputs ΔT; local pooling buckets manage simulation cost. Atmosphere venting trades cooler temps for lower solar efficiency.
+
+### Power Progression  
+Biomass → Coal Turbines → Geothermal Loops → Core‑Tap MHD → Antimatter Synth.  
+Heat sinks, fins, cryo‑loops, or vacuum are mandatory to keep machines < T_max.
+
+### Rail‑Cannons  
+Four tiers (32 m → 256 m). Each shot drains grid capacitors, applies recoil to foundations, and increments **Exported Mass**. Processed materials score multipliers ×2 (refined) or ×5 (high‑tech).
+
+---
+
+## Player Feedback
+
+* **Skybox** – Azure ► Slate ► Charcoal ► Blood‑red aurora as pollution rises.  
+* **Terrain** – Vegetation desaturates, then metal plates overtake soil voxels.  
+* **Audio** – Birds → wind howl → machine drone → EM crackle.  
+* **HUD Gauges** – Planet Mass %, Atmos Pressure %, Grid ΔT, Trace Elements %. Color shifts white→amber→crimson.
+
+---
+
+## Minimal Feature Slice (v0.1 prototype)
+
+1. Chunked voxel terrain w/ dig & place.  
+2. Drone entity: mine, haul, build.  
+3. Biomass burner driving a simple power graph.  
+4. Tier I rail cannon firing dummy payloads.  
+5. Global pollution variable linked to sky tint.
+
+Delivering this slice proves terrain modification, basic logistics, power flow, and the “export mass” loop.
+
+---
+
+## Stretch Goals
+
+* Procedural storms that damage exposed machinery.  
+* Atmosphere compression & venting visualised by cloud height.  
+* Mantle magma composition randomisation for resource variation.  
+* Multiplayer co‑op (shared drone pool).
+
+---
+
+## Technical Stack (current plan)
+
+* **Engine** – Godot 4.x (GDScript) for performance‑friendly voxel rendering, open‑source licensing, and text‑based assets (Git‑friendly).  
+* **Graphics** – Single‑colour cubes or simple PBR voxel materials; focus on simulation over art.  
+* **CI / CD** – GitHub Actions: headless Godot export for Windows & Web, artifact upload, optional GitHub Pages deploy of Web build.
+
+---
+
+## Roadmap Milestones
+
+1. **Repo Bootstrap** – README, .gitignore, Godot project files.  
+2. **Voxel Terrain & Mining** – octree, mining tool, inventory items.  
+3. **Drone & Movement** – pathfinding, task queue, build action.  
+4. **Power & Heat** – biomass generator, grid node sim, overheating.  
+5. **Tier I Logistics** – belts/pipes, basic smelter, simple UI overlays.  
+6. **Tier I Rail Cannon** – structure assembly, firing, export counter.  
+7. **Mid‑Layer Expansion** – new ores, coolant loops, Tier II drills.  
+8. **Mantle Systems** – magma pumps, cryo‑coolers, high‑temp alloys.  
+9. **Core‑Tap & Megacannon** – endgame extraction, victory/defeat logic.  
+10. **Polish Pass** – skybox transitions, audio cues, balancing, saves.
+
+---
+
+### Contributing
+AI‑generated code (via Codex) will land in feature branches reviewed by a human maintainer. Passes CI? ✅ Merge. Fails? 🔄 Iterate.  
+Pull requests welcome once core slice stabilises.
+
+---
+
+`Last updated | July 13 2025`
