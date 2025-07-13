@@ -3,7 +3,7 @@ extends Node3D
 @export var size_x := 16
 @export var size_z := 16
 
-var cube_mesh := CubeMesh.new()
+var cube_mesh := BoxMesh.new()
 var material := StandardMaterial3D.new()
 var multimesh := MultiMesh.new()
 var multimesh_instance := MultiMeshInstance3D.new()

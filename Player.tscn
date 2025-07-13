@@ -6,7 +6,7 @@
 script = ExtResource(1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = CubeMesh.new()
+mesh = BoxMesh.new()
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = BoxShape3D.new()

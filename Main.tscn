@@ -17,7 +17,7 @@ rotation_degrees = Vector3(-60, 45, 0)
 position = Vector3(2, 0.5, 2)
 
 [node name="Mesh" type="MeshInstance3D" parent="Obstacle1"]
-mesh = CubeMesh.new()
+mesh = BoxMesh.new()
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle1"]
 shape = BoxShape3D.new()
@@ -26,7 +26,7 @@ shape = BoxShape3D.new()
 position = Vector3(-3, 0.5, -1)
 
 [node name="Mesh" type="MeshInstance3D" parent="Obstacle2"]
-mesh = CubeMesh.new()
+mesh = BoxMesh.new()
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle2"]
 shape = BoxShape3D.new()
